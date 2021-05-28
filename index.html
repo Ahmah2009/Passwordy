@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        .prefix-btn{
+            position: absolute;
+            width: 2rem;
+            font-size: 2rem;
+            height: 2rem;
+            -webkit-transition: color .2s;
+            transition: color .2s;
+            top: 0rem;
+            right: 1rem;
+        }
+        .btn-block {
+            width: 100%;
+        }
+        #qrcode img {
+            margin: auto;
+            display: block;
+        }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+        <div class="nav-wrapper center-align">
+            Passwordy
+        </div>
+    </nav>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input readonly id="passwordy" value="Password-y" type="text" class="center-align">
+                    <i id="refresh-btn" class="waves-effect waves-light material-icons prefix-btn spin tooltipped" data-position="bottom" data-tooltip="Refresh">autorenew</i>
+                    <label for="passwordy">Password-y</label>
+                </div>
+            </div>
+            <div class="row center-left">
+                <div class="col s12">
+                    <form action="#">
+                        <p>
+                          <label>
+                            <input id="alpha" type="checkbox" checked="checked" class="allow"/>
+                            <span>Alpha</span>
+                          </label>
+                        </p>
+                        <p>
+                          <label>
+                            <input id="digits" type="checkbox" checked="checked" class="allow"/>
+                            <span>Digits</span>
+                          </label>
+                        </p>
+                        <p>
+                            <label>
+                              <input id="special" type="checkbox" class="allow"/>
+                              <span>Special</span>
+                            </label>
+                        </p>                    
+                    </form>                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s1">
+                    Length
+                </div>
+
+                <div class="range-field col s6">
+                    <input type="range" id="password-len" min="4" value=16 max="100" />
+                </div>
+                <div class="col s1">
+                    <span id="length-val"></span>
+                </div>
+                <div class="col s2">
+                    <a id="copy-btn" class="btn btn-block waves-effect waves-light tooltipped-click" onclick="copy()" ata-position="bottom" data-delay="50" data-tooltip="Copied">Copy</a>
+                </div>
+                <div class="col s2">
+                    <a id="show-qr" class="btn btn-block waves-effect waves-light">Show QR</a>
+                </div>
+            </div>
+        </div>
+        <div class="section center-align">
+            <div id="qrcode" class="col s6 offset-s6"></div>
+        </div>
+    </div>
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/qrcode.min.js"></script>
+  </body>
+</html>
